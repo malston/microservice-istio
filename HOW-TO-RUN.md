@@ -213,6 +213,8 @@ microservice-istio-postgres          latest              deadbeef8880        Abo
 ...
 ```
 
+* Harbor Registry only: Upload the images to Harbor docker registry with `./docker-push-harbor.sh`
+
 * Google Cloud only: Upload the images to the Google Cloud with `./docker-push-gcp.sh`
 
 
@@ -220,6 +222,9 @@ microservice-istio-postgres          latest              deadbeef8880        Abo
 
 * Make sure that the Istio containers are automatically injected when the pods are started:
 `kubectl label namespace default istio-injection=enabled`
+
+* Harbor only: Modify the YAML files to load the Docker images
+  from the Google Docker repo with `fix-microservices-harbor.sh`
 
 * Google Cloud only: Modify the YAML files to load the Docker images
   from the Google Docker repo with `fix-microservices-gcp.sh`
